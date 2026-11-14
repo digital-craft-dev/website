@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مِهنتي | MIHNATI</title>
+
+<style>
+:root{--bg:#f2f6fa;--card:#fff;--navy:#102b46;--navy2:#193e5d;--teal:#19b7ad;--soft:#e5f8f5;--text:#203449;--muted:#718096;--border:#e3ebf1;--shadow:0 8px 25px #102b4610;}
+body.dark{--bg:#080f19;--card:#111d2b;--navy:#e4f1fa;--navy2:#193e5d;--teal:#21d2c4;--soft:#142e34;--text:#e4edf5;--muted:#9aabba;--border:#26394c;--shadow:0 8px 25px #0005;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif;min-height:100vh;transition:.25s}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer;border:0}
+.hidden{display:none!important}
+.container{width:min(1100px,92%);margin:auto}
+.icon{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+header{height:75px;background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50}
+.header-inner{width:94%;max-width:1100px;margin:auto;height:100%;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;font-size:23px;font-weight:bold;color:var(--navy)}
+.logo-mark{width:44px;height:44px;border-radius:14px;background:var(--teal);color:white;display:grid;place-items:center}
+.logo small{display:block;font-size:9px;letter-spacing:3px;color:var(--muted)}
+.header-actions{display:flex;gap:9px}
+.header-btn{width:43px;height:43px;border-radius:13px;background:var(--soft);color:var(--teal);display:grid;place-items:center}
+.back-btn{font-size:25px;color:var(--navy)}
+.cover{min-height:calc(100vh - 75px);background:linear-gradient(130deg,#0b2036,#12465a);display:flex;align-items:center;justify-content:center;text-align:center;color:white;padding:35px 20px}
+.cover-content{max-width:650px}
+.cover-logo{width:90px;height:90px;border-radius:27px;background:var(--teal);margin:0 auto 20px;display:grid;place-items:center;box-shadow:0 10px 30px #0005}
+.cover h1{font-size:45px;margin-bottom:5px}
+.english{letter-spacing:7px;color:#7be7dc;font-weight:bold}
+.cover p{line-height:2;color:#d6e6ef;margin:22px auto}
+.cover-art{width:100%;max-width:340px;height:150px;margin:10px auto}
+.start-btn,.btn{padding:14px 23px;border-radius:14px;font-weight:bold;display:inline-flex;align-items:center;justify-content:center;gap:9px;transition:.2s}
+.start-btn,.primary{background:var(--teal);color:white;box-shadow:0 5px 0 #087f79,0 9px 20px #19b7ad30}
+.secondary{background:var(--navy2);color:white;box-shadow:0 5px 0 #071b2c}
+.btn:active,.start-btn:active{transform:translateY(4px);box-shadow:none}
+.page{display:none;padding:30px 0 60px}
+.page.active{display:block!important}
+.page-title{margin-bottom:23px}
+.page-title h2{color:var(--navy);font-size:26px;margin-bottom:7px}
+.page-title p{color:var(--muted);font-size:14px}
+.welcome{background:linear-gradient(120deg,#102b46,#176276);color:white;border-radius:22px;padding:28px;margin-bottom:30px}
+.welcome h2{font-size:25px;margin-bottom:10px}
+.welcome p{line-height:1.9;color:#d0e4ed}
+.home-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.category,.sub-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px 12px;box-shadow:var(--shadow);cursor:pointer;transition:.2s}
+.category{text-align:center}
+.category:hover,.sub-card:hover{transform:translateY(-4px);border-color:var(--teal)}
+.icon-box{width:53px;height:53px;border-radius:16px;background:var(--soft);color:var(--teal);display:grid;place-items:center;margin:0 auto 12px}
+.category h3,.sub-card h3{font-size:14px;color:var(--navy)}
+.sub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.sub-card{display:flex;align-items:center;gap:12px}
+.sub-card .icon-box{margin:0;flex-shrink:0}
+.action-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.action-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:25px;text-align:center;box-shadow:var(--shadow)}
+.action-card .icon-box{width:65px;height:65px}
+.action-card h3{color:var(--navy);margin-bottom:9px}
+.action-card p{color:var(--muted);font-size:13px;line-height:1.8;margin-bottom:18px}
+.form-card{max-width:720px;margin:auto;background:var(--card);border:1px solid var(--border);padding:24px;border-radius:20px;box-shadow:var(--shadow)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.field{margin-bottom:12px}
+.field label{display:block;color:var(--navy);font-weight:bold;font-size:13px;margin-bottom:7px}
+.field input,.field select,.field textarea{width:100%;padding:13px;border-radius:11px;border:1px solid var(--border);background:var(--bg);color:var(--text);outline:none}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--teal)}
+.field textarea{min-height:110px;resize:vertical}
+.full{grid-column:1/-1}
+.error{border:2px solid #e74c3c!important}
+.error-message{color:#e74c3c;font-size:12px;display:none;margin-top:5px}
+.field.invalid .error-message{display:block}
+
+/* زر إلغاء التقديم */
+.cancel-btn{
+background:#e74c3c;
+color:white;
+padding:14px 23px;
+border-radius:14px;
+font-weight:bold;
+width:100%;
+margin-top:10px;
+transition:.2s;
+}
+.cancel-btn:hover{background:#c0392b}
+.cancel-btn:active{transform:translateY(3px)}
+
+.applicant-card,.ad-card{background:var(--card);border:1px solid var(--border);border-radius:17px;padding:18px;margin-bottom:13px;box-shadow:var(--shadow)}
+.applicant-card{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.applicant-info h3,.ad-card h3{color:var(--navy);margin-bottom:8px}
+.applicant-info p,.ad-card p{font-size:13px;color:var(--muted);margin-top:6px;line-height:1.7}
+.contact-actions{display:flex;gap:7px;flex-wrap:wrap}
+.contact-btn,.copy-btn{padding:10px;border-radius:10px;background:var(--soft);color:var(--teal)}
+.copy-btn{background:var(--navy2);color:white}
+.empty{background:var(--card);border:1px dashed var(--border);padding:35px;text-align:center;border-radius:17px;color:var(--muted)}
+.drawer-bg{display:none;position:fixed;inset:0;background:#0008;z-index:100}
+.drawer-bg.show{display:block}
+.drawer{position:absolute;top:0;height:100%;width:min(320px,85%);background:var(--card);padding:25px;overflow:auto}
+html[dir="rtl"] .drawer{left:0;right:auto}
+html[dir="ltr"] .drawer{right:0;left:auto}
+.drawer h2{color:var(--navy);margin:15px 0 25px}
+.drawer-item{width:100%;padding:15px;margin-bottom:10px;border-radius:12px;background:var(--bg);color:var(--text);display:flex;justify-content:space-between;align-items:center;text-align:start}
+.about-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:22px;margin-bottom:15px;box-shadow:var(--shadow)}
+.about-card h3{color:var(--teal);margin-bottom:10px}
+.about-card p{color:var(--text);line-height:2;font-size:14px}
+.beta-note{background:var(--soft);border:1px solid var(--teal);border-radius:14px;padding:16px;text-align:center;color:var(--teal);font-weight:bold;margin-top:18px}
+footer{background:#0c2238;color:#a9bdcc;text-align:center;padding:22px;font-size:12px;margin-top:25px;line-height:2}
+.toast{position:fixed;bottom:20px;left:20px;background:var(--navy2);color:white;padding:13px 20px;border-radius:12px;z-index:200}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}.sub-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:550px){.cover h1{font-size:37px}.form-grid,.action-grid{grid-template-columns:1fr}.full{grid-column:auto}.sub-grid{grid-template-columns:1fr 1fr}.applicant-card{align-items:flex-start;flex-direction:column}.contact-actions{width:100%}.contact-btn{flex:1}}
+</style>
+</head>
+
+<body>
+
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+<symbol id="brief" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V4h8v3M3 12h18"/></symbol>
+<symbol id="menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+<symbol id="homeIcon" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10h-7v-7h-4v7H3z"/></symbol>
+<symbol id="hospital" viewBox="0 0 24 24"><path d="M4 21V5h16v16M12 8v7m-3-3h6"/></symbol>
+<symbol id="flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-6 11h16L14 9V3"/></symbol>
+<symbol id="heart" viewBox="0 0 24 24"><path d="M20 8c0 6-8 11-8 11S4 14 4 8a4 4 0 0 1 8-1 4 4 0 0 1 8 1Z"/></symbol>
+<symbol id="code" viewBox="0 0 24 24"><path d="m8 8-5 4 5 4m8-8 5 4-5 4m-2-12-4 16"/></symbol>
+<symbol id="engineer" viewBox="0 0 24 24"><path d="M4 21h16M6 21V8l6-4 6 4v13M9 11h2m2 0h2"/></symbol>
+<symbol id="book" viewBox="0 0 24 24"><path d="M3 5a2 2 0 0 1 2-2h16v17H5a2 2 0 0 1-2-2zM3 17h18"/></symbol>
+<symbol id="chart" viewBox="0 0 24 24"><path d="M3 3v18h18M8 16v-5m5 5V5m5 11V9"/></symbol>
+<symbol id="tools" viewBox="0 0 24 24"><path d="m14 7 3-3 3 3-3 3M4 20l9-9M5 5l4 4M3 7l4-4 5 5-4 4z"/></symbol>
+<symbol id="camera" viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><circle cx="12" cy="13" r="4"/></symbol>
+<symbol id="scale" viewBox="0 0 24 24"><path d="M12 3v18M5 6h14M5 6l-3 7h6zM19 6l-3 7h6zM7 21h10"/></symbol>
+<symbol id="truck" viewBox="0 0 24 24"><path d="M3 6h12v12H3zM15 10h4l3 4v4h-7"/><circle cx="7" cy="19" r="2"/><circle cx="18" cy="19" r="2"/></symbol>
+<symbol id="leaf" viewBox="0 0 24 24"><path d="M20 4C9 3 4 8 4 15a5 5 0 0 0 5 5c7 0 12-5 11-16Z M3 22c4-7 8-10 14-13"/></symbol>
+<symbol id="users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="4"/><path d="M2 21v-2a7 7 0 0 1 14 0v2M17 4a4 4 0 0 1 0 8m2 3a5 5 0 0 1 3 5v1"/></symbol>
+<symbol id="phone" viewBox="0 0 24 24"><path d="M5 3h4l2 5-3 2a15 15 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2Z"/></symbol>
+<symbol id="whatsapp" viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-12 7l-5 1 1-5a8 8 0 1 1 16-3Z"/><path d="M9 8c0 4 3 7 7 7l1-2-3-1-1 1-2-2 1-1-1-3Z"/></symbol>
+<symbol id="copy" viewBox="0 0 24 24"><rect x="8" y="8" width="13" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></symbol>
+<symbol id="help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.5 9a2.5 2.5 0 1 1 4.5 1.5c-1.5 1-2 1.5-2 3m0 4h.01"/></symbol>
+</svg>
+
+<header>
+<div class="header-inner">
+<div class="logo">
+<div class="logo-mark"><svg class="icon"><use href="#brief"/></svg></div>
+<div><span data-t="brand">مِهنتي</span><small>MIHNATI</small></div>
+</div>
+<div class="header-actions">
+<button class="header-btn back-btn" onclick="goBack()">‹</button>
+<button class="header-btn" onclick="go('home')"><svg class="icon"><use href="#homeIcon"/></svg></button>
+<button class="header-btn" onclick="toggleDrawer()"><svg class="icon"><use href="#menu"/></svg></button>
+</div>
+</div>
+</header>
+
+<div class="drawer-bg" id="drawerBg" onclick="if(event.target===this)toggleDrawer()">
+<div class="drawer">
+<h2 data-t="settings">الإعدادات</h2>
+<button class="drawer-item" onclick="toggleTheme()"><span data-t="appearance">المظهر</span><span id="themeLabel">☀️ فاتح</span></button>
+<button class="drawer-item" onclick="toggleLanguage()"><span data-t="language">اللغة</span><span id="langLabel">English</span></button>
+<button class="drawer-item" onclick="go('home');toggleDrawer()"><span data-t="home">الرئيسية</span>⌂</button>
+<button class="drawer-item" onclick="about()"><span data-t="about">عن المنصة</span>ⓘ</button>
+</div>
+</div>
+
+<section id="cover" class="cover">
+<div class="cover-content">
+<div class="cover-logo"><svg class="icon" style="width:55px;height:55px;color:white"><use href="#brief"/></svg></div>
+<h1 data-t="brand">مِهنتي</h1>
+<div class="english">MIHNATI</div>
+<svg class="cover-art" viewBox="0 0 340 150">
+<rect x="55" y="8" width="230" height="130" rx="17" fill="#ffffff18" stroke="#ffffff66"/>
+<rect x="80" y="30" width="180" height="90" rx="9" fill="white"/>
+<rect x="100" y="45" width="80" height="7" rx="3" fill="#b8d6df"/>
+<rect x="100" y="60" width="130" height="5" rx="3" fill="#dce9ed"/>
+<rect x="100" y="73" width="110" height="5" rx="3" fill="#dce9ed"/>
+<circle cx="120" cy="98" r="13" fill="#19b7ad"/>
+<path d="M114 98h12m-6-6v12" stroke="white" stroke-width="2"/>
+<rect x="145" y="94" width="85" height="6" rx="3" fill="#b8d6df"/>
+</svg>
+<p data-t="intro">منصة تجمع أصحاب المؤسسات بالباحثين عن عمل، وتساعدك في الوصول إلى الفرص المهنية المناسبة والتقديم بسهولة.</p>
+<button class="start-btn" onclick="startApp()" data-t="start">ابدأ الآن ←</button>
+</div>
+</section>
+
+<div id="app" class="hidden">
+
+<section id="home" class="page active">
+<div class="container">
+<div class="welcome">
+<h2 data-t="welcome">مرحباً بك في مِهنتي</h2>
+<p data-t="welcomeText">اكتشف مجالك المهني وقدم على الوظائف وتواصل مع أصحاب المؤسسات.</p>
+<div class="home-buttons">
+<button class="btn primary" onclick="go('postJob')" data-t="postJob">+ الإعلان عن وظيفة</button>
+<button class="btn secondary" onclick="go('ads')" data-t="viewAds">عرض إعلانات الوظائف</button>
+</div>
+</div>
+<div class="page-title"><h2 data-t="fields">المجالات الرئيسية</h2><p data-t="chooseField">اختار المجال المناسب لك.</p></div>
+<div class="grid" id="categories"></div>
+</div>
+</section>
+
+<section id="subcategories" class="page"><div class="container">
+<div class="page-title"><h2 id="categoryTitle"></h2><p data-t="chooseSpecialty">اختار التخصص المناسب.</p></div>
+<div class="sub-grid" id="subGrid"></div>
+</div></section>
+
+<section id="specialty" class="page"><div class="container">
+<div class="page-title"><h2 id="specialtyTitle"></h2><p data-t="chooseAction">اختار الخدمة المطلوبة.</p></div>
+<div class="action-grid">
+<div class="action-card"><div class="icon-box"><svg class="icon"><use href="#brief"/></svg></div>
+<h3 data-t="apply">التقديم على وظيفة</h3><p data-t="applyText">أدخل بياناتك للتقديم على الفرص.</p>
+<button class="btn primary" style="width:100%" onclick="prepareApplication()" data-t="applyNow">تقديم طلب</button></div>
+<div class="action-card"><div class="icon-box"><svg class="icon"><use href="#users"/></svg></div>
+<h3 data-t="applicants">المتقدمون</h3><p data-t="applicantsText">اعرض المسجلين في هذا التخصص.</p>
+<button class="btn secondary" style="width:100%" onclick="showApplicants()" data-t="viewApplicants">عرض المتقدمين</button></div>
+</div>
+</div></section>
+
+<section id="application" class="page"><div class="container">
+<div class="page-title"><h2 data-t="applicationTitle">استمارة التقديم</h2><p><span data-t="specialty">التخصص:</span> <b id="formSpecialty"></b></p></div>
+<form class="form-card" id="applicationForm" novalidate>
+<div class="form-grid">
+<div class="field"><label data-t="name">الاسم الكامل *</label><input name="name" required><div class="error-message" data-t="required">هذا الحقل مطلوب.</div></div>
+<div class="field"><label data-t="state">الولاية *</label><select name="state" required><option value="" data-t="choose">اختار</option><option>الخرطوم</option><option>الجزيرة</option><option>البحر الأحمر</option><option>كسلا</option><option>القضارف</option><option>سنار</option><option>النيل الأبيض</option><option>النيل الأزرق</option><option>الشمالية</option><option>نهر النيل</option><option>شمال كردفان</option><option>جنوب كردفان</option><option>غرب كردفان</option><option>شمال دارفور</option><option>جنوب دارفور</option><option>شرق دارفور</option><option>وسط دارفور</option><option>غرب دارفور</option></select><div class="error-message" data-t="required">هذا الحقل مطلوب.</div></div>
+<div class="field"><label data-t="city">المدينة *</label><input name="city" required><div class="error-message" data-t="required">هذا الحقل مطلوب.</div></div>
+<div class="field"><label data-t="phone">رقم الهاتف</label><input name="phone" type="tel"><div class="error-message" data-t="phoneOrEmail">أدخل رقم الهاتف أو البريد الإلكتروني.</div></div>
+<div class="field full"><label data-t="email">البريد الإلكتروني</label><input name="email" type="email"><div class="error-message" data-t="phoneOrEmail">أدخل بريداً صحيحاً أو رقم الهاتف.</div></div>
+<div class="field full"><label data-t="cv">السيرة الذاتية CV (اختياري)</label><input name="cv" type="file" accept=".pdf,.doc,.docx"></div>
+</div>
+
+<button class="btn primary" style="width:100%" type="submit" data-t="submit">إرسال طلب التقديم</button>
+
+<!-- زر إلغاء يمسح البيانات ويبقي المستخدم في نفس الصفحة -->
+<button class="cancel-btn" type="button" onclick="cancelApplication()" data-t="cancelApplication">إلغاء</button>
+
+</form>
+</div></section>
+
+<section id="applicants" class="page"><div class="container">
+<div class="page-title"><h2 data-t="applicants">المتقدمون</h2><p id="applicantsTitle"></p></div>
+<div id="applicantsList"></div>
+</div></section>
+
+<section id="postJob" class="page"><div class="container">
+<div class="page-title"><h2 data-t="postTitle">الإعلان عن وظيفة</h2><p data-t="postText">أدخل معلومات الشركة والوظيفة.</p></div>
+<form class="form-card" id="jobForm" novalidate>
+<div class="field"><label data-t="company">اسم الشركة *</label><input name="company" required><div class="error-message" data-t="required">هذا الحقل مطلوب.</div></div>
+<div class="field"><label data-t="jobType">نوع الوظيفة *</label><select name="type" required><option value="" data-t="choose">اختار</option><option>دوام كامل</option><option>دوام جزئي</option><option>عمل مؤقت</option><option>عمل عن بُعد</option><option>تدريب</option></select><div class="error-message" data-t="required">هذا الحقل مطلوب.</div></div>
+<div class="field"><label data-t="specialty">التخصص المطلوب *</label><select name="specialty" required id="jobSpecialty"><option value="">اختار التخصص</option></select><div class="error-message" data-t="required">هذا الحقل مطلوب.</div></div>
+<div class="field"><label data-t="jobTitle">المسمى الوظيفي *</label><input name="title" required><div class="error-message" data-t="required">هذا الحقل مطلوب.</div></div>
+<div class="field"><label data-t="conditions">الشروط والمتطلبات *</label><textarea name="conditions" required></textarea><div class="error-message" data-t="required">هذا الحقل مطلوب.</div></div>
+<div class="field"><label data-t="contact">رقم التواصل أو البريد الإلكتروني *</label><input name="contact" required><div class="error-message" data-t="required">هذا الحقل مطلوب.</div></div>
+<button class="btn primary" style="width:100%" data-t="publish">نشر الإعلان</button>
+</form>
+</div></section>
+
+<section id="ads" class="page"><div class="container">
+<div class="page-title"><h2 data-t="adsTitle">إعلانات الوظائف</h2><p data-t="adsText">الوظائف المنشورة.</p></div>
+<div id="adsList"></div>
+</div></section>
+
+<section id="about" class="page">
+<div class="container">
+<div class="page-title">
+<h2 data-t="aboutTitle">عن منصة مِهنتي</h2>
+<p data-t="aboutIntro">منصة مِهنتي للتوظيف والفرص المهنية.</p>
+</div>
+<div class="about-card">
+<h3 data-t="aboutWho">نبذة عن المنصة</h3>
+<p data-t="aboutWhoText">مِهنتي منصة تهدف إلى الربط بين الباحثين عن عمل وأصحاب المؤسسات، وتسهيل الوصول إلى الفرص الوظيفية والتواصل المهني.</p>
+</div>
+<div class="about-card">
+<h3 data-t="aboutVision">رؤيتنا</h3>
+<p data-t="aboutVisionText">أن نكون منصة موثوقة تسهم في تطوير سوق العمل وربط الكفاءات بالفرص المناسبة.</p>
+</div>
+<div class="about-card">
+<h3 data-t="aboutMission">رسالتنا</h3>
+<p data-t="aboutMissionText">تسهيل عملية البحث عن الوظائف والتوظيف، وتوفير مساحة تجمع أصحاب الأعمال والباحثين عن فرص مهنية.</p>
+</div>
+<div class="about-card">
+<h3 data-t="aboutGoals">أهداف المنصة</h3>
+<p data-t="aboutGoalsText">تسهيل الوصول إلى الوظائف، دعم الكفاءات، توفير وسيلة لنشر إعلانات الوظائف، وتعزيز التواصل بين الباحثين عن عمل والمؤسسات.</p>
+</div>
+<div class="about-card">
+<h3 data-t="aboutFeatures">مميزات المنصة</h3>
+<p data-t="aboutFeaturesText">تصنيف الوظائف حسب المجالات والتخصصات، تقديم طلبات التوظيف، عرض المتقدمين، نشر إعلانات الوظائف، ودعم اللغتين العربية والإنجليزية.</p>
+</div>
+<div class="about-card">
+<h3 data-t="aboutUsers">الفئات المستهدفة</h3>
+<p data-t="aboutUsersText">الباحثون عن عمل، الخريجون، أصحاب المؤسسات، والشركات الراغبة في استقطاب الكفاءات.</p>
+</div>
+<div class="about-card">
+<h3 data-t="aboutUsage">طريقة الاستخدام</h3>
+<p data-t="aboutUsageText">يمكن للباحث عن عمل اختيار المجال والتخصص ثم تقديم طلبه، كما يمكن لأصحاب المؤسسات نشر إعلانات الوظائف واستعراض المتقدمين.</p>
+</div>
+<div class="beta-note" data-t="betaNote">هذه نسخة تجريبية من منصة مِهنتي (Beta Version).</div>
+</div>
+</section>
+
+<section id="help" class="page"><div class="container">
+<div class="page-title"><h2 data-t="helpTitle">المساعدة وطريقة الاستخدام</h2></div>
+<div id="helpContent"></div>
+</div></section>
+
+</div>
+
+<footer><span data-t="brand">مِهنتي</span> MIHNATI © 2026<br><span data-t="footer">منصة تجمع الكفاءات بفرص العمل</span></footer>
+
+<script>
+
+const translations = {
+ar: {
+brand:"مِهنتي",settings:"إعدادات مِهنتي",appearance:"المظهر",language:"اللغة",home:"الرئيسية",help:"المساعدة",about:"عن المنصة",
+intro:"منصة تجمع أصحاب المؤسسات بالباحثين عن عمل، وتساعدك في الوصول إلى الفرص المهنية المناسبة والتقديم بسهولة.",
+start:"ابدأ الآن ←",welcome:"مرحباً بك في مِهنتي",welcomeText:"اكتشف مجالك المهني وقدم على الوظائف وتواصل مع أصحاب المؤسسات.",
+postJob:"+ الإعلان عن وظيفة",viewAds:"عرض إعلانات الوظائف",fields:"المجالات الرئيسية",chooseField:"اختار المجال المناسب ليك.",
+chooseSpecialty:"اختار التخصص المناسب.",chooseAction:"اختار الخدمة المطلوبة.",apply:"التقديم على وظيفة",applyText:"أدخل بياناتك للتقديم على الفرص.",
+applyNow:"تقديم طلب",applicants:"المتقدمون",applicantsText:"اعرض المسجلين في هذا التخصص.",viewApplicants:"عرض المتقدمين",
+applicationTitle:"استمارة التقديم",specialty:"التخصص",name:"الاسم الكامل *",state:"الولاية *",city:"المدينة *",phone:"رقم الهاتف",email:"البريد الإلكتروني",cv:"السيرة الذاتية CV (اختياري)",
+submit:"إرسال طلب التقديم",
+cancelApplication:"إلغاء",
+applicationCancelled:"تم مسح جميع البيانات بنجاح.",
+required:"هذا الحقل مطلوب.",phoneOrEmail:"أدخل رقم هاتف أو بريداً إلكترونياً صحيحاً.",
+choose:"اختار",postTitle:"الإعلان عن وظيفة",postText:"أدخل معلومات الشركة والوظيفة.",company:"اسم الشركة أو المؤسسة *",jobType:"نوع الوظيفة *",
+jobTitle:"المسمى الوظيفي *",conditions:"الشروط والمتطلبات *",contact:"رقم التواصل أو البريد الإلكتروني *",publish:"نشر الإعلان",
+adsTitle:"إعلانات الوظائف",adsText:"الوظائف المنشورة.",helpTitle:"المساعدة وطريقة الاستخدام",
+footer:"منصة تجمع الكفاءات بفرص العمل",dark:"🌙 داكن",light:"☀️ فاتح",
+emptyApplicants:"لا يوجد متقدمون في هذا التخصص حتى الآن.",emptyAds:"لا توجد إعلانات حتى الآن.",
+companyLabel:"الشركة",typeLabel:"نوع الوظيفة",specialtyLabel:"التخصص",conditionsLabel:"الشروط",dateLabel:"التاريخ",
+call:"اتصال",whatsapp:"واتساب",copy:"نسخ",emailButton:"بريد إلكتروني",contactCompany:"التواصل مع الشركة",
+successApplication:"تم تسجيل طلبك بنجاح.",successAd:"تم نشر الإعلان بنجاح.",error:"راجعي البيانات المطلوبة.",
+help1:"كيف أقدم على وظيفة؟",help1t:"اختار المجال ثم التخصص، واضغط على تقديم طلب واملأ بياناتك.",
+help2:"كيف أعرض المتقدمين؟",help2t:"ادخل التخصص واضغط عرض المتقدمين.",
+help3:"كيف أنشر وظيفة؟",help3t:"من الرئيسية اضغط الإعلان عن وظيفة وأدخل البيانات.",
+help4:"أين تحفظ البيانات؟",help4t:"تحفظ البيانات على الجهاز الحالي داخل المتصفح. هذه نسخة تجريبية.",
+aboutText:"مِهنتي منصة تجريبية لربط الباحثين عن عمل بأصحاب المؤسسات.",
+aboutTitle:"عن منصة مِهنتي",
+aboutIntro:"منصة مِهنتي للتوظيف والفرص المهنية.",
+aboutWho:"نبذة عن المنصة",
+aboutWhoText:"مِهنتي منصة تهدف إلى الربط بين الباحثين عن عمل وأصحاب المؤسسات، وتسهيل الوصول إلى الفرص الوظيفية والتواصل المهني.",
+aboutVision:"رؤيتنا",
+aboutVisionText:"أن نكون منصة موثوقة تسهم في تطوير سوق العمل وربط الكفاءات بالفرص المناسبة.",
+aboutMission:"رسالتنا",
+aboutMissionText:"تسهيل عملية البحث عن الوظائف والتوظيف، وتوفير مساحة تجمع أصحاب الأعمال والباحثين عن فرص مهنية.",
+aboutGoals:"أهداف المنصة",
+aboutGoalsText:"تسهيل الوصول إلى الوظائف، دعم الكفاءات، توفير وسيلة لنشر إعلانات الوظائف، وتعزيز التواصل بين الباحثين عن عمل والمؤسسات.",
+aboutFeatures:"مميزات المنصة",
+aboutFeaturesText:"تصنيف الوظائف حسب المجالات والتخصصات، تقديم طلبات التوظيف، عرض المتقدمين، نشر إعلانات الوظائف، ودعم اللغتين العربية والإنجليزية.",
+aboutUsers:"الفئات المستهدفة",
+aboutUsersText:"الباحثون عن عمل، الخريجون، أصحاب المؤسسات، والشركات الراغبة في استقطاب الكفاءات.",
+aboutUsage:"طريقة الاستخدام",
+aboutUsageText:"يمكن للباحث عن عمل اختيار المجال والتخصص ثم تقديم طلبه، كما يمكن لأصحاب المؤسسات نشر إعلانات الوظائف واستعراض المتقدمين.",
+betaNote:"هذه نسخة تجريبية من منصة مِهنتي (Beta Version)."
+},
+
+en: {
+brand:"Mihnati",settings:"Mihnati Settings",appearance:"Appearance",language:"Language",home:"Home",help:"Help",about:"About",
+intro:"A platform connecting employers with job seekers.",start:"Get Started →",welcome:"Welcome to Mihnati",
+welcomeText:"Explore your career field, apply for jobs and connect with employers.",
+postJob:"+ Post a Job",viewAds:"View Job Ads",fields:"Main Fields",chooseField:"Choose the field that suits you.",
+chooseSpecialty:"Choose a specialty.",chooseAction:"Choose an action.",apply:"Apply for a Job",applyText:"Enter your information to apply.",
+applyNow:"Apply Now",applicants:"Applicants",applicantsText:"View registered applicants.",viewApplicants:"View Applicants",
+applicationTitle:"Application Form",specialty:"Specialty",name:"Full Name *",state:"State *",city:"City *",phone:"Phone Number",email:"Email Address",cv:"CV (Optional)",
+submit:"Submit Application",
+cancelApplication:"Cancel",
+applicationCancelled:"All entered data has been cleared.",
+required:"This field is required.",phoneOrEmail:"Enter a valid phone or email.",
+choose:"Choose",postTitle:"Post a Job",postText:"Enter company and job information.",company:"Company Name *",jobType:"Job Type *",
+jobTitle:"Job Title *",conditions:"Requirements *",contact:"Contact Number or Email *",publish:"Publish Job",
+adsTitle:"Job Advertisements",adsText:"Published job opportunities.",helpTitle:"Help & User Guide",
+footer:"Connecting talent with job opportunities",dark:"🌙 Dark",light:"☀️ Light",
+emptyApplicants:"There are no applicants in this specialty yet.",emptyAds:"There are no job advertisements yet.",
+companyLabel:"Company",typeLabel:"Job Type",specialtyLabel:"Specialty",conditionsLabel:"Requirements",dateLabel:"Date",
+call:"Call",whatsapp:"WhatsApp",copy:"Copy",emailButton:"Email",contactCompany:"Contact Company",
+successApplication:"Application submitted successfully.",successAd:"Job published successfully.",error:"Please check required fields.",
+help1:"How do I apply?",help1t:"Choose a field, specialty, click Apply and fill your info.",
+help2:"How do I view applicants?",help2t:"Open a specialty and click View Applicants.",
+help3:"How do I post a job?",help3t:"Click Post a Job on home page.",
+help4:"Where is data stored?",help4t:"Data is stored locally in this browser.",
+aboutText:"Mihnati is a demo platform connecting job seekers with employers.",
+aboutTitle:"About Mihnati",
+aboutIntro:"Mihnati – Employment and Career Opportunities Platform.",
+aboutWho:"About the Platform",
+aboutWhoText:"Mihnati aims to connect job seekers with employers and make job opportunities and professional communication easier.",
+aboutVision:"Our Vision",
+aboutVisionText:"To become a trusted platform that contributes to developing the job market and connecting talent with suitable opportunities.",
+aboutMission:"Our Mission",
+aboutMissionText:"To simplify job searching and recruitment and provide a space connecting employers with job seekers.",
+aboutGoals:"Our Goals",
+aboutGoalsText:"Making job opportunities accessible, supporting talent, providing a way to publish job advertisements, and improving communication between job seekers and institutions.",
+aboutFeatures:"Platform Features",
+aboutFeaturesText:"Job classification by fields and specialties, job applications, applicant viewing, job advertisements, and Arabic and English language support.",
+aboutUsers:"Target Audience",
+aboutUsersText:"Job seekers, graduates, employers, and companies looking to recruit talent.",
+aboutUsage:"How to Use",
+aboutUsageText:"Job seekers can choose a field and specialty and submit an application. Employers can publish job advertisements and view applicants.",
+betaNote:"This is a Beta Version of Mihnati."
+}
+};
+
+let lang=localStorage.getItem("mih_lang")||"ar";
+let currentPage="cover";
+let historyPages=[];
+let selectedField="";
+let selectedSpecialty="";
+
+let applicants=JSON.parse(localStorage.getItem("mih_applicants")||"[]");
+let advertisements=JSON.parse(localStorage.getItem("mih_ads")||"[]");
+
+const fields=[
+["القطاع الطبي","Medical","hospital",[
+["مختبرات طبية","Medical Laboratories","flask"],
+["تمريض","Nursing","heart"],
+["أشعة وتصوير طبي","Radiology","camera"],
+["صيدلة","Pharmacy","hospital"],
+["طب عام","General Medicine","heart"],
+["طب أسنان","Dentistry","heart"],
+["علاج طبيعي","Physiotherapy","heart"]
+]],
+["الهندسة","Engineering","engineer",[
+["هندسة مدنية","Civil Engineering","engineer"],
+["هندسة معمارية","Architecture","homeIcon"],
+["هندسة كهربائية","Electrical Engineering","tools"],
+["هندسة ميكانيكية","Mechanical Engineering","tools"],
+["هندسة اتصالات","Telecommunications","code"],
+["هندسة كيميائية","Chemical Engineering","flask"]
+]],
+["تقنية المعلومات","Information Technology","code",[
+["تطوير مواقع","Web Development","code"],
+["تطوير تطبيقات","App Development","code"],
+["شبكات","Networking","chart"],
+["أمن سيبراني","Cybersecurity","scale"],
+["قواعد بيانات","Databases","chart"],
+["دعم فني","Technical Support","tools"],
+["تحليل بيانات","Data Analysis","chart"]
+]],
+["التعليم","Education","book",[
+["معلمون","Teachers","book"],
+["محاضرون","Lecturers","book"],
+["رياض أطفال","Kindergarten","heart"],
+["تعليم إلكتروني","E-learning","code"],
+["إدارة مدارس","School Management","chart"]
+]],
+["الإدارة والأعمال","Business & Management","chart",[
+["محاسبة","Accounting","chart"],
+["موارد بشرية","Human Resources","users"],
+["إدارة أعمال","Business Administration","brief"],
+["تسويق ومبيعات","Marketing & Sales","chart"],
+["خدمة عملاء","Customer Service","phone"],
+["سكرتارية","Secretarial Work","book"]
+]],
+["الحرف والمهن","Trades","tools",[
+["كهرباء","Electrical Work","tools"],
+["سباكة","Plumbing","tools"],
+["نجارة","Carpentry","tools"],
+["حدادة","Blacksmithing","tools"],
+["صيانة أجهزة","Appliance Repair","tools"],
+["خياطة","Tailoring","camera"]
+]],
+["الإعلام والتصميم","Media & Design","camera",[
+["تصميم جرافيك","Graphic Design","camera"],
+["تصوير","Photography","camera"],
+["مونتاج","Video Editing","camera"],
+["كتابة محتوى","Content Writing","book"],
+["إدارة منصات","Social Media Management","chart"]
+]],
+["النقل والخدمات","Transport & Services","truck",[
+["سائقون","Drivers","truck"],
+["توصيل","Delivery","truck"],
+["لوجستيات","Logistics","truck"],
+["مخازن","Warehousing","brief"],
+["ضيافة","Hospitality","heart"]
+]],
+["الزراعة والبيئة","Agriculture & Environment","leaf",[
+["إنتاج زراعي","Agricultural Production","leaf"],
+["طب بيطري","Veterinary Medicine","heart"],
+["ري ومياه","Irrigation & Water","leaf"],
+["سلامة بيئية","Environmental Safety","leaf"]
+]],
+["القانون","Law","scale",[
+["محاماة","Lawyers","scale"],
+["استشارات قانونية","Legal Consultancy","scale"],
+["شؤون قانونية","Legal Affairs","scale"]
+]]
+];
+
+function tr(k){
+return (translations[lang]&&translations[lang][k])||translations.ar[k]||k;
+}
+
+function fieldName(f){return lang==="en"?f[1]:f[0]}
+function subName(s){return lang==="en"?s[1]:s[0]}
+function icon(id){return '<svg class="icon"><use href="#'+id+'"/></svg>'}
+
+function escapeHTML(s){
+return String(s||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+
+function escapeAttr(s){return String(s||"").replace(/['"\\]/g,"")}
+
+function save(){
+localStorage.setItem("mih_applicants",JSON.stringify(applicants));
+localStorage.setItem("mih_ads",JSON.stringify(advertisements));
+}
+
+function notify(msg){
+const x=document.createElement("div");
+x.className="toast";
+x.textContent=msg;
+document.body.appendChild(x);
+setTimeout(()=>x.remove(),2800);
+}
+
+function go(page,remember=true){
+
+if(remember&&currentPage!==page){
+historyPages.push(currentPage);
+}
+
+document.querySelectorAll(".page").forEach(p=>{
+p.classList.remove("active");
+p.style.display="none";
+});
+
+const target=document.getElementById(page);
+
+if(target&&target.classList.contains("page")){
+target.classList.add("active");
+target.style.display="block";
+currentPage=page;
+window.scrollTo(0,0);
+}
+
+}
+
+function startApp(){
+
+document.getElementById("cover").classList.add("hidden");
+
+const app=document.getElementById("app");
+app.classList.remove("hidden");
+app.style.display="block";
+
+document.querySelectorAll(".page").forEach(p=>{
+p.classList.remove("active");
+p.style.display="none";
+});
+
+const homePage=document.querySelector("#app section#home");
+
+if(homePage){
+homePage.classList.add("active");
+homePage.style.display="block";
+}
+
+currentPage="home";
+historyPages=[];
+
+renderCategories();
+fillJobSpecialties();
+renderAds();
+renderHelp();
+
+window.scrollTo(0,0);
+
+}
+
+function goBack(){
+
+if(historyPages.length){
+go(historyPages.pop(),false);
+}
+else if(currentPage!=="home"){
+go("home",false);
+}
+else{
+document.getElementById("app").classList.add("hidden");
+document.getElementById("cover").classList.remove("hidden");
+currentPage="cover";
+}
+
+}
+
+function toggleDrawer(){
+document.getElementById("drawerBg").classList.toggle("show");
+}
+
+function about(){
+toggleDrawer();
+go("about");
+}
+
+function applyLanguage(){
+
+document.documentElement.lang=lang;
+document.documentElement.dir=lang==="ar"?"rtl":"ltr";
+
+document.querySelectorAll("[data-t]").forEach(el=>{
+const k=el.getAttribute("data-t");
+const v=tr(k);
+if(v)el.textContent=v;
+});
+
+const langLbl=document.getElementById("langLabel");
+if(langLbl)langLbl.textContent=lang==="ar"?"English":"العربية";
+
+const themeLbl=document.getElementById("themeLabel");
+if(themeLbl)themeLbl.textContent=document.body.classList.contains("dark")?tr("light"):tr("dark");
+
+renderCategories();
+fillJobSpecialties();
+renderAds();
+renderHelp();
+
+if(selectedField){
+document.getElementById("categoryTitle").textContent=selectedField;
+}
+
+if(selectedSpecialty){
+document.getElementById("specialtyTitle").textContent=selectedSpecialty;
+document.getElementById("formSpecialty").textContent=selectedSpecialty;
+}
+
+if(currentPage==="subcategories"){
+const i=fields.findIndex(f=>fieldName(f)===selectedField);
+if(i>=0)renderSubcategories(i);
+}
+
+}
+
+function toggleLanguage(){
+
+lang=lang==="ar"?"en":"ar";
+localStorage.setItem("mih_lang",lang);
+applyLanguage();
+
+notify(lang==="en"?"English enabled":"تم تفعيل العربية");
+
+}
+
+function toggleTheme(){
+
+document.body.classList.toggle("dark");
+
+const isDark=document.body.classList.contains("dark");
+
+localStorage.setItem("mih_theme",isDark?"dark":"light");
+
+document.getElementById("themeLabel").textContent=isDark?tr("light"):tr("dark");
+
+}
+
+function renderCategories(){
+
+const box=document.getElementById("categories");
+if(!box)return;
+
+box.innerHTML=fields.map((f,i)=>
+'<div class="category" data-field-index="'+i+'"><div class="icon-box">'+icon(f[2])+'</div><h3>'+fieldName(f)+'</h3></div>'
+).join("");
+
+}
+
+function renderSubcategories(i){
+
+const subGrid=document.getElementById("subGrid");
+
+subGrid.innerHTML=fields[i][3].map((s,si)=>
+'<div class="sub-card" data-field-index="'+i+'" data-sub-index="'+si+'"><div class="icon-box">'+icon(s[2])+'</div><h3>'+subName(s)+'</h3></div>'
+).join("");
+
+}
+
+function openField(i){
+
+selectedField=fieldName(fields[i]);
+
+document.getElementById("categoryTitle").textContent=selectedField;
+
+renderSubcategories(i);
+
+go("subcategories");
+
+}
+
+function openSpecialty(fi,si){
+
+const s=fields[fi][3][si];
+
+selectedSpecialty=subName(s);
+
+document.getElementById("specialtyTitle").textContent=selectedSpecialty;
+document.getElementById("formSpecialty").textContent=selectedSpecialty;
+
+go("specialty");
+
+}
+
+function prepareApplication(){
+
+document.getElementById("formSpecialty").textContent=selectedSpecialty;
+
+go("application");
+
+}
+
+function mark(input){
+
+const f=input.closest(".field");
+
+if(f){
+f.classList.add("invalid");
+input.classList.add("error");
+}
+
+}
+
+function clearErrors(form){
+
+form.querySelectorAll(".field").forEach(f=>{
+f.classList.remove("invalid");
+f.querySelectorAll("input,select,textarea").forEach(x=>x.classList.remove("error"));
+});
+
+}
+
+/* دالة إلغاء التقديم: تمسح البيانات فقط ولا تغيّر الصفحة */
+function cancelApplication(){
+
+const form=document.getElementById("applicationForm");
+
+form.reset();
+
+clearErrors(form);
+
+notify(tr("applicationCancelled"));
+
+}
+
+function showApplicants(){
+
+const list=applicants.filter(a=>a.specialty===selectedSpecialty);
+
+document.getElementById("applicantsTitle").textContent=selectedSpecialty;
+
+const box=document.getElementById("applicantsList");
+
+if(box){
+
+box.innerHTML=list.length?list.map(a=>
+'<div class="applicant-card"><div class="applicant-info"><h3>'+escapeHTML(a.name)+'</h3><p>'+escapeHTML(a.state)+' - '+escapeHTML(a.city)+'</p><p>'+escapeHTML(a.specialty)+'</p>'+(a.cvName?'<p>CV: '+escapeHTML(a.cvName)+'</p>':'')+'</div><div class="contact-actions">'+
+(a.phone?
+'<button class="contact-btn" onclick="location.href=\'tel:'+escapeAttr(a.phone)+'\'">'+icon("phone")+' '+tr("call")+'</button>'+
+'<button class="contact-btn" onclick="whatsapp(\''+encodeURIComponent(a.phone)+'\')">'+icon("whatsapp")+'</button>'+
+'<button class="copy-btn" onclick="copyText(\''+encodeURIComponent(a.phone)+'\')">'+icon("copy")+' '+tr("copy")+'</button>':'')+
+(a.email?'<button class="contact-btn" onclick="location.href=\'mailto:'+escapeAttr(a.email)+'\'">✉ '+tr("emailButton")+'</button>':'')+
+'</div></div>'
+).join(""):'<div class="empty">'+tr("emptyApplicants")+'</div>';
+
+}
+
+go("applicants");
+
+}
+
+function whatsapp(encoded){
+
+let n=decodeURIComponent(encoded).replace(/\D/g,"");
+
+if(n.startsWith("0"))n="249"+n.substring(1);
+
+window.open("https://wa.me/"+n,"_blank");
+
+}
+
+function copyText(encoded){
+
+const n=decodeURIComponent(encoded);
+
+if(navigator.clipboard){
+
+navigator.clipboard.writeText(n).then(
+()=>notify(tr("copy")+" ✓"),
+()=>notify(n)
+);
+
+}else{
+
+const t=document.createElement("textarea");
+t.value=n;
+document.body.appendChild(t);
+t.select();
+document.execCommand("copy");
+t.remove();
+
+notify(tr("copy")+" ✓");
+
+}
+
+}
+
+function contactCompany(encoded){
+
+const c=decodeURIComponent(encoded);
+
+if(c.includes("@")){
+location.href="mailto:"+c;
+}else{
+location.href="tel:"+c;
+}
+
+}
+
+function fillJobSpecialties(){
+
+const sel=document.getElementById("jobSpecialty");
+if(!sel)return;
+
+const old=sel.value;
+
+let html='<option value="">'+tr("choose")+'</option>';
+
+for(const f of fields){
+
+for(const s of f[3]){
+
+html+='<option value="'+escapeHTML(s[0])+'">'+escapeHTML(fieldName(f)+" - "+subName(s))+'</option>';
+
+}
+
+}
+
+sel.innerHTML=html;
+sel.value=old;
+
+}
+
+function renderAds(){
+
+const box=document.getElementById("adsList");
+if(!box)return;
+
+if(!advertisements.length){
+
+box.innerHTML='<div class="empty">'+tr("emptyAds")+'</div>';
+return;
+
+}
+
+box.innerHTML=advertisements.map(a=>
+
+'<div class="ad-card">'+
+'<h3>'+escapeHTML(a.title)+'</h3>'+
+'<p><b>'+tr("companyLabel")+':</b> '+escapeHTML(a.company)+'</p>'+
+'<p><b>'+tr("typeLabel")+':</b> '+escapeHTML(a.type)+'</p>'+
+'<p><b>'+tr("specialtyLabel")+':</b> '+escapeHTML(a.specialty)+'</p>'+
+'<p><b>'+tr("conditionsLabel")+':</b> '+escapeHTML(a.conditions)+'</p>'+
+'<p><b>'+tr("dateLabel")+':</b> '+escapeHTML(a.date)+'</p>'+
+'<button class="btn primary" style="margin-top:13px" onclick="contactCompany(\''+encodeURIComponent(a.contact)+'\')">'+tr("contactCompany")+'</button>'+
+'</div>'
+
+).join("");
+
+}
+
+function renderHelp(){
+
+const items=[["help1","help1t"],["help2","help2t"],["help3","help3t"],["help4","help4t"]];
+
+const box=document.getElementById("helpContent");
+
+if(box){
+
+box.innerHTML=items.map(x=>
+'<div class="ad-card"><h3>'+tr(x[0])+'</h3><p>'+tr(x[1])+'</p></div>'
+).join("");
+
+}
+
+}
+
+document.addEventListener("click",function(e){
+
+const cat=e.target.closest(".category");
+
+if(cat){
+openField(parseInt(cat.dataset.fieldIndex));
+return;
+}
+
+const sub=e.target.closest(".sub-card");
+
+if(sub){
+openSpecialty(
+parseInt(sub.dataset.fieldIndex),
+parseInt(sub.dataset.subIndex)
+);
+return;
+}
+
+});
+
+document.getElementById("applicationForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const f=this;
+clearErrors(f);
+
+const d=f.elements;
+let valid=true;
+
+["name","state","city"].forEach(k=>{
+
+if(!d[k].value.trim()){
+mark(d[k]);
+valid=false;
+}
+
+});
+
+const hasPhone=d.phone.value.trim();
+const hasEmail=d.email.value.trim();
+
+if(!hasPhone&&!hasEmail){
+mark(d.phone);
+mark(d.email);
+valid=false;
+}
+
+if(hasEmail&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(hasEmail)){
+mark(d.email);
+valid=false;
+}
+
+if(hasPhone&&!/^[0-9+\-\s()]{7,20}$/.test(hasPhone)){
+mark(d.phone);
+valid=false;
+}
+
+if(!valid){
+notify(tr("error"));
+return;
+}
+
+applicants.push({
+id:Date.now(),
+name:d.name.value.trim(),
+state:d.state.value,
+city:d.city.value.trim(),
+phone:hasPhone,
+email:hasEmail,
+cvName:d.cv.files[0]?d.cv.files[0].name:"",
+specialty:selectedSpecialty,
+field:selectedField
+});
+
+save();
+
+f.reset();
+
+notify(tr("successApplication"));
+
+go("specialty");
+
+});
+
+document.getElementById("jobForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const f=this;
+clearErrors(f);
+
+const d=f.elements;
+let valid=true;
+
+["company","type","specialty","title","conditions","contact"].forEach(k=>{
+
+if(!d[k].value.trim()){
+mark(d[k]);
+valid=false;
+}
+
+});
+
+if(!valid){
+notify(tr("error"));
+return;
+}
+
+advertisements.unshift({
+
+company:d.company.value.trim(),
+type:d.type.value,
+specialty:d.specialty.options[d.specialty.selectedIndex].text,
+title:d.title.value.trim(),
+conditions:d.conditions.value.trim(),
+contact:d.contact.value.trim(),
+date:new Date().toLocaleDateString()
+
+});
+
+save();
+
+f.reset();
+
+renderAds();
+
+notify(tr("successAd"));
+
+go("ads");
+
+});
+
+/* تشغيل المنصة: الوضع الداكن افتراضيًا */
+(function init(){
+
+const savedTheme=localStorage.getItem("mih_theme");
+
+if(savedTheme==="light"){
+document.body.classList.remove("dark");
+}else{
+document.body.classList.add("dark");
+localStorage.setItem("mih_theme","dark");
+}
+
+renderCategories();
+fillJobSpecialties();
+renderAds();
+renderHelp();
+applyLanguage();
+
+})();
+
+</script>
+
+</body>
+</html>
